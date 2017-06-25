@@ -8,8 +8,7 @@ function aniGP(d::Int64, n::Int64)
  # simply by calling chol(K)' * K.
 
  # Phillip Hennig, September 2012
- # Marcelo Hartmann, December 2016 (julia language)
-
+ 
  x = randn(d)                         # starting sample
  r = sqrt(sum(x.^2))
  x ./= r                              # projection onto sphere
@@ -31,8 +30,7 @@ function ExpMap(µ::Vector{Float64}, E::Matrix{Float64})
  # Computes the exponential-map on the sphere
  # Acknowledgement to Soren Hauberg
  # Phillip Hennig, September 2012
- # Marcelo Hartmann, December 2016 (julia language)
-
+ 
  D = size(E, 1)
  θ = sqrt(sum(E.^2, 1))
  M = µ * cos(θ) + E .* repmat(sin(θ)./θ, D, 1)
